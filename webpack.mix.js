@@ -20,9 +20,6 @@ mix.postCss('resources/css/main.css', 'public/css', [
     require('postcss-nested'),
     require('postcss-preset-env')({stage: 0})
 ])
-.copy('resources/img/', 'public/img')
-.copy('resources/favicon.ico', 'public/favicon.ico')
-.copy('resources/movies/', 'public/movies')
 
 if (mix.inProduction()) {
    mix.version();
