@@ -1,0 +1,79 @@
+
+{{ if not enabled }}
+{{ partial src="partials/cta" title='Vi har ingen träning planerat just nu' description='' button='Prenumerera' }}
+{{ else }}
+
+<h1 class="text-center -mt-4">Träning</h1>
+<p>
+    Äntligen har vi möjlighet att träna regelbundet! Nu kan vi träffas söndagar på förmiddagen
+    för att slappna av och lära oss mer om Cheng Hsin. </p>
+
+<p class="bg-green-200 py-2 text-center rounded"><span class="font-semibold">Planen var att börja träna i mars,
+    men på grund av Corona epidemin måste vi tyvärr skjuta upp det.</span>
+</p>
+<p class="font-semibold">
+    <span class="font-bold">Plats:</span> <a href="https://adg-aikido.se">Aikido Dojo Gamlestaden</a>, Byfogdegatan 3B, Göteborg
+</p>
+
+<p class="font-semibold">
+    <span class="font-bold">Tider:</span> Söndagar, kl. 10.00 &ndash; 12.00
+</p>
+
+<p>
+    Träningen kommer att vara delad i två pass. Den första timmen fokuserar vi på rörelse, balans och fallteknik, tillsammns med
+    några aikido nybörjare. Den andra timmen blir det tekniker och lekar.
+</p>
+
+<p>
+    <span class="font-semibold">Angående kostnaden</span>, du får välja själv hur mycket du betalar, beroende på hur mycket du tycker att träningen är värt och din finansiella situation.
+    Det är helt okej att inte betala något. Medlemmar i ADG måste inte betala alls, men får gärna det om de vill &#128512;
+</p>
+
+{{ partial src="partials/cta" title='Anmäl dig för träning!' description='<span>Vi vet inte när vi kommer att börja träna, när Corona hotet minskar.</span>' button='Anmäl dig!' }}
+
+{{ if false }}
+<h2>Anmälan</h2>
+<div class="flex flex-wrap">
+    <div class="w-full md:w-1/2 md:pr-4">
+        <p>
+            Föranmälan krävs varje gång, eftersom vi vill inte att folk ska komma i onödan om ingen annan är med.
+            Du ska få ett meddelande om passet ställs in.
+        </p>
+        <p>
+            Om ett datum inte finns med i listan, blir det ingen träning den dagen.
+        </p>
+    </div>
+
+    <div class="w-full md:w-1/2 bg-indigo-200 -mx-2 p-4 rounded shadow">
+        <form name="training" method="POST" data-netlify="true" action="/training/success/" netlify-honeypot="hpot" class="mx-auto max-w-md">
+            <div class="mb-2 flex items-center">
+                <div class="w-1/3"><label for="date">Datum <span class="text-red-500">*</span></label></div>
+                <select name="date" class="form-select w-2/3" required x-data='{dates:true }'>
+                    {{ dates }}
+                        <template x-if="new Date('{{ value }}')>=new Date()"><option value="{{value}}" class="">{{text}}</option></template>
+                    {{ /dates }}
+                </select>
+            </div>
+            <div class="mb-2 flex items-center">
+                <div class="w-1/3"><label for="email">E-post <span class="text-red-500">*</span></label></div>
+                <input name="email" type="email" class="form-input w-2/3" placeholder="name@provider.se" required>
+            </div>
+            <div class="mb-2 flex items-center">
+                <div class="w-1/3"><label for="email">Namn</label></div>
+                <input name="name" type="text" class="form-input w-2/3" placeholder="">
+            </div>
+            <div class="mt-4 mb-6">
+                <label class="w-full block text-gray-700">
+                    <input class="mr-2 leading-tight form-checkbox" type="checkbox" name="newsletter">
+                    <span class="">
+                        Jag vill även få nyhetsbrevet
+                    </span>
+                </label>
+            </div>
+            <input type="hidden" name="hpot">
+            <button type="submit" class="py-2 px-8 bg-blue-400 text-indigo-900 font-bold rounded shadow">Skicka</button>
+        </form>
+    </div>
+</div>
+{{ endif }}
+{{ endif }}

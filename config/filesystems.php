@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('FILESYSTEM_DRIVER', 'local'),
+    'default' => env('FILESYSTEM_DRIVER', 'assets'),
 
     /*
     |--------------------------------------------------------------------------
@@ -71,6 +71,12 @@ return [
             'visibility' => 'public',
         ],
 
+        'videos' => [
+            'driver' => 'local',
+            'root' => public_path('videos'),
+            'url' => '/videos',
+            'visibility' => 'public',
+        ],
     ],
 
     /*

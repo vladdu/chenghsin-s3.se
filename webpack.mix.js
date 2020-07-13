@@ -10,15 +10,19 @@ require('laravel-mix-purgecss');
  | file for the application as well as bundling up all the JS files.
  |
  */
+mix.disableSuccessNotifications();
 
 mix.js('resources/js/site.js', 'public/js')
 
-mix.postCss('resources/css/tailwind.css', 'public/css', [
+mix.postCss('resources/css/main.css', 'public/css', [
     require('postcss-import'),
     require('tailwindcss'),
     require('postcss-nested'),
     require('postcss-preset-env')({stage: 0})
 ])
+.copy('resources/img/', 'public/img')
+.copy('resources/favicon.ico', 'public/favicon.ico')
+.copy('resources/movies/', 'public/movies')
 
 if (mix.inProduction()) {
    mix.version();

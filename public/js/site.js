@@ -86,10 +86,10 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./resources/css/tailwind.css":
-/*!************************************!*\
-  !*** ./resources/css/tailwind.css ***!
-  \************************************/
+/***/ "./resources/css/main.css":
+/*!********************************!*\
+  !*** ./resources/css/main.css ***!
+  \********************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -109,14 +109,14 @@
 /***/ }),
 
 /***/ 0:
-/*!*****************************************************************!*\
-  !*** multi ./resources/js/site.js ./resources/css/tailwind.css ***!
-  \*****************************************************************/
+/*!*************************************************************!*\
+  !*** multi ./resources/js/site.js ./resources/css/main.css ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! /home/vlad/sites/chenghsin-s3.se/resources/js/site.js */"./resources/js/site.js");
-module.exports = __webpack_require__(/*! /home/vlad/sites/chenghsin-s3.se/resources/css/tailwind.css */"./resources/css/tailwind.css");
+module.exports = __webpack_require__(/*! /home/vlad/sites/chenghsin-s3.se/resources/css/main.css */"./resources/css/main.css");
 
 
 /***/ })

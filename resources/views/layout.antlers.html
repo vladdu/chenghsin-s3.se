@@ -4,13 +4,72 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>{{ title ?? site:name }}</title>
-        <link rel="stylesheet" href="{{ mix src='css/tailwind.css' }}">
-        <script src="{{ mix src='/js/site.js' }}"></script>
+
+        <title>{{ app:name }} &ndash; {{ title }}</title>
+        <meta name="description" content="{{ app:description }}"/>
+        <meta name="keywords" content="{{ app:keywords }}">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <meta name="application-name" content="{{ app:name }}">
+        <link rel="icon" href="/favicon.ico">
+        <meta name='robots' content='index,follow'/>
+        <link rel="stylesheet" href="/css/main.css">
+        <meta name="google-site-verification" content="sh7kMSKYnnQvxUFQ6tRpVoiMmp1jU26zScP2UoSqHqQ"/>
+        <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.0.1/dist/alpine.js" defer></script>
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2bBpY93yvd">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=2bBpY93yvd">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=2bBpY93yvd">
+        <link rel="manifest" href="/site.webmanifest?v=2bBpY93yvd">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg?v=2bBpY93yvd" color="#5bbad5">
+        <link rel="shortcut icon" href="/favicon.ico?v=2bBpY93yvd">
+        <meta name="apple-mobile-web-app-title" content="{{ app:name }}">
+        <meta name="application-name" content="{{ app:name }}">
+        <meta name="msapplication-TileColor" content="#603cba">
+        <meta name="theme-color" content="#ffffff">
+
+        {{ if config:app:env != 'local' }}
+            <!-- Global site tag (gtag.js) - Google Analytics -->
+            <script async src="https://www.googletagmanager.com/gtag/js?id={{ app:googleTag }}"></script>
+            <script>
+                window.dataLayer = window.dataLayer || [];
+                function gtag() {
+                    dataLayer.push(arguments);
+                }
+                gtag('js', new Date());
+
+                gtag('config', '{{ app:googleTag }}');
+            </script>
+            <!-- End Google Tag Manager -->
+        {{ endif }}
+        <script>
+            function init() {
+                var vidDefer = document.getElementsByTagName('iframe');
+                for (var i = 0; i < vidDefer.length; i++) {
+                    if (vidDefer[i].getAttribute('data-src')) {
+                        vidDefer[i].setAttribute('src', vidDefer[i].getAttribute('data-src'));
+                    }
+                }
+            }
+            window.onload = init;
+        </script>
     </head>
-    <body class="bg-gray-200 font-sans leading-normal text-grey-800">
-        <div class="mx-auto px-2 h-screen flex items-center justify-center">
-            {{ template_content }}
+    <body class="flex flex-col h-full font-sans bg-gray-100 text-gray-800 border-t-4 border-green-700 min-h-screen">
+        <header class="shadow-md w-full mb-3">
+            {{ partial:partials/nav }}
+        </header>
+        <div class="container mx-auto font-sans leading-normal">
+            <section role="main" class="mx-2 sm:mx-4 md:mx-8 lg:mx-24">
+                <div class="mt-8 ">
+                    {{ template_content }}
+                </div>
+            </section>
         </div>
+        <footer class="bg-green-700 text-xs text-center mt-8 py-1 bottom-0">
+            <div class="text-green-200">
+                &copy; 2019&ndash;{{ now format="Y" }} {{ app:author }}
+                <a href="mailto:{{ app:webmasterContact }}" class="pl-8 text-green-400 hover:text-green-200 no-underline">Kontakta webmaster</a>
+            </div>
+        </footer>
+        <script src="/js/main.js"></script>
     </body>
 </html>

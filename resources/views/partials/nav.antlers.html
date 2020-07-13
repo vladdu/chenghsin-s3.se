@@ -1,0 +1,32 @@
+<nav class="container mx-auto mb-2">
+    <div class="mx-4 md:mx-32 flex items-center justify-between">
+        <div class="text-center text-gray-800 flex-none w-16 text-3xl font-serif font-bold">
+            诚心
+        </div>
+        <div class="text-center flex-1">
+
+            <p class="my-4 text-3xl font-serif font-bold"><a href="/" class="text-indigo-900">Cheng Hsin <span class="text-gray-600">Sverige</span></a></p>
+            <!--p class="text-sm text-gray-600 -mt-6 uppercase">Skill, sensitivity, awareness </p-->
+            <p class="text-sm text-gray-600 -mt-4 uppercase">Färdighet, känslighet, medvetenhet</p>
+        </div>
+        <svg class="block w-16 h-16 flex-none text-indigo-900" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0, 0, 400,400">
+            <g>
+                <path class="text-gray-800 fill-current" stroke="none" fill-rule="evenodd" d="M154.887 15.756 C 107.567 25.855,57.446 73.633,38.847 126.370 C 2.197 230.293,57.697 337.465,162.630 365.399 C 309.595 404.522,434.693 248.830,367.222 110.770 C 332.655 40.040,244.481 -7.987,208.055 24.076 L 204.595 27.122 200.982 24.348 C 189.223 15.324,171.975 12.108,154.887 15.756 M209.640 84.742 C 216.661 95.027,224.964 101.465,247.744 114.286 C 270.343 127.004,278.882 133.304,288.422 144.296 C 343.282 207.508,315.743 304.612,237.218 324.841 C 164.904 343.469,98.372 295.901,95.736 223.684 C 94.096 178.768,114.508 145.232,160.150 117.851 C 184.545 103.217,196.288 93.053,201.878 81.735 L 204.771 75.877 205.719 78.132 C 206.241 79.372,208.005 82.347,209.640 84.742 "></path>
+            </g>
+        </svg>
+    </div>
+    <div class="mx-4 md:mx-32 flex items-center">
+        <ul class="text-sm text-gray-800 flex flex-wrap items-center mx-auto">
+            {{ nav from="/" }}
+                <li class="pr-2">
+                    <a href="{{ url }}" class="inline-block py-2 px-3 font-bold text-gray-700 hover:text-gray-600 no-underline uppercase {{ if is_current }}text-red-500{{ /if }}">
+                        {{ title }}
+                    </a>
+                </li>
+            {{ /nav }}
+        </ul>
+        <button class="hidden bg-gray-700 hover:bg-gray-600 text-white ml-4 py-2 px-3">
+            Sign Up
+        </button>
+    </div>
+</nav>
