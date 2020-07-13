@@ -1,5 +1,5 @@
 const mix = require('laravel-mix');
-require('laravel-mix-purgecss');
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -23,7 +23,6 @@ mix.postCss('resources/css/main.css', 'public/css', [
 
 if (mix.inProduction()) {
    mix.version();
-   mix.purgeCss({ enabled: true });
 }
 
 /*
