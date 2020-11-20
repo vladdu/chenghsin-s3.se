@@ -5,7 +5,7 @@ template: home
 ---
 <div class="max-w-2xl mx-auto text-center py-4 lg:px-4 -mt-8">
     <a href="/training" class="no-underline">
-        <div class="px-4 py-2 bg-indigo-700 items-center text-indigo-100 leading-none rounded rounded-full flex lg:inline-flex shadow-md">
+        <div class="px-4 py-2 bg-indigo-600 items-center text-indigo-100 leading-none rounded rounded-full flex lg:inline-flex shadow-md">
             <span class="inline-block font-semibold mr-4 text-left flex-auto text-center sm:text-left leading-snug flex flex-wrap justify-center">
                 <span>Äntligen schemalagd träning!</span> <span>&nbsp;&mdash; söndagar 10.00</span>
             </span>
@@ -22,7 +22,7 @@ template: home
     Utveckla självkännedom, lär dig interaktion och färdighet.
 </h3>
 
-<div class="clearfix">
+<div class="flow-root">
     <img src="/assets/Image-51.png" class="w-64 mx-auto sm:mx-0 sm:float-right sm:ml-8 mb-2 shadow-md p-2 bg-gray-200">
     <p>
         Lär dig tekniker, övningar och spel utformade för att utveckla skicklighet, känslighet och medvetenhet på många områden.
@@ -35,7 +35,6 @@ template: home
         Cheng Hsin har rötter i österländska discipliner som Zen, Taijiquan, Aikido, Judo, Xing Yi Quan, Thai boxning och Baguazhang,
         i västerländska boxningen samt medvetenhets&ndash; och empowerment rörelsen.
     </p>
-</div>
 <blockquote class="mt-6 sm:ml-2 md:ml-8 md:mr-4 pl-4 md:pl-8 border-l border-indigo-400 italic relative">
     <span class="font-serif text-6xl text-indigo-600 opacity-50 absolute top-0 left-0 z-10" style="left: -0.2em; top: -0.5em;">❞</span>
     <p>
@@ -45,6 +44,7 @@ template: home
     </p>
     <span class="text-gray-600">&mdash; Peter Ralston</span>
 </blockquote>
+</div>
 
 <div class="bg-green-100 shadow-lg px-4 py-8 my-6">
     <div class="flex flex-wrap justify-between items-top">
